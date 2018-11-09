@@ -5,7 +5,10 @@ HANGMAN
   > Word Banks
   > How Quick you answer
   > Sets of words ( you choose category, program chooses random word)
+    > Each category has its own class
+    > Most methods inherited, only differnce would be word bank
   > Possible 2 player option, 1 person enters word, other person guesses it.
+    > Seperate class for 2 player option 
   
     - Graphical Components (man, letter slots, etc.)
      > If graphics take too long we could go with a score system (5 *'s, once you run out, you lose)
