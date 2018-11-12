@@ -20,11 +20,19 @@ if player chooses 1
       count letters
       create spaces for letter input depending on how much counted letters
       
-    if player inputs choice 2
+    if player inputs choice 3
       Load file with word list
       select random word
       count letters
       create spaces for letter input depending on how much counted letters
      
- print "please fill in the spaces with the word you think it is."
-            
+ Method for getting user input
+   print "please fill in the spaces with the word you think it is."
+   for up to 6 mistakes
+      allow user to enter a letter
+      if letter is in word
+        add letter to correct blank
+      else if letter is not in word
+        add 1 to mistakes
+ 
+ 
