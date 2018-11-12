@@ -34,5 +34,6 @@ if player chooses 1
         add letter to correct blank
       else if letter is not in word
         add 1 to mistakes
+   check to make sure user enters letters (exception handling)
  
  
