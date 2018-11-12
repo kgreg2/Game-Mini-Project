@@ -1,1 +1,30 @@
+Load GUI setup window
+"Welcome to HANGMAN, [1] or [2] Players?"
+get player input via mouse click on 1 or 2
 
+if player chooses 1
+  print "which Category would you like"
+  list 3 categories
+    "animals, places, food" (FILLER)
+    get user input via mouse click
+        
+    if player inputs choice 1
+      Load file word listen class
+      select random word
+      count letters
+      create spaces for letter input depending on how much counted letters
+      
+    if player inputs choice 2
+      Load file word listen class
+      select random word
+      count letters
+      create spaces for letter input depending on how much counted letters
+      
+    if player inputs choice 2
+      Load file word listen class
+      select random word
+      count letters
+      create spaces for letter input depending on how much counted letters
+     
+ print "please fill in the spaces with the word you think it is."
+            
