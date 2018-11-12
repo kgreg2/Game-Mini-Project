@@ -9,19 +9,19 @@ if player chooses 1
     get user input via mouse click
         
     if player inputs choice 1
-      Load file word listen class
+      Load file with word list
       select random word
       count letters
       create spaces for letter input depending on how much counted letters
       
     if player inputs choice 2
-      Load file word listen class
+      Load file with word list
       select random word
       count letters
       create spaces for letter input depending on how much counted letters
       
     if player inputs choice 2
-      Load file word listen class
+      Load file with word list
       select random word
       count letters
       create spaces for letter input depending on how much counted letters
