@@ -1,44 +1,65 @@
-Load GUI setup window
-"Welcome to HANGMAN, [1] or [2] Players?"
-get player input via mouse click on 1 or 2
+Super class
 
-if player chooses 1
-  print "which Category would you like"
-  list 3 categories
-    "animals, places, food" (FILLER)
-    get user input via mouse click
-        
-    if player inputs choice 1
-      Load file with word list
-      select random word
-      count letters
-      create spaces for letter input depending on how much counted letters
-      
-    if player inputs choice 2
-      Load file with word list
-      select random word
-      count letters
-      create spaces for letter input depending on how much counted letters
-      
-    if player inputs choice 3
-      Load file with word list
-      select random word
-      count letters
-      create spaces for letter input depending on how much counted letters
-     
- Method for getting user input
-   print "please fill in the spaces with the word you think it is."
-   for up to 6 mistakes
-      allow user to enter a letter
-      if letter is in word
-        add letter to correct blank
-      else if letter is not in word
-        add 1 to mistakes
-Method for exception handling
-  check to make sure user enters letters (exception handling)
+    Load GUI setup window
+
+    Main method
+        "Welcome to HANGMAN, [1] or [2] Players?"
+        get player input via mouse click on 1 or 2
+
+        if player chooses 1
+          print "which Category would you like"
+          list 3 categories
+            "animals, places, food" (FILLER)
+            get user input via mouse click
+
+            if player inputs choice 1
+              create object of choice #1 class
+              word list = [words for choice #1]
+              call user input method
+              call chose random word method (parameters is wordlist)
+              call method for counting spaces (parameter is random word)
+
+            if player inputs choice 2
+              create object of choice #2 class
+              word list = [words for choice #2]
+              call chose random word method (parameters is wordlist)
+              call method for counting spaces (parameter is random word)
+              call user input method
+
+            if player inputs choice 3
+              create object of choice #3 class
+              Load file with word list
+              select random word
+              count letters
+              create spaces for letter input depending on how much counted letters
+
+         else if player chooses 2
+            create object of 2 player class
+
+    Method for getting user input
+       print "please fill in the spaces with the word you think it is."
+       for up to 6 mistakes (exit once condition is met)
+          allow user to enter a letter
+          call exception handling method
+          if letter is in word
+            add letter to correct blank
+          else if letter is not in word
+            add 1 to mistakes
+            call method for graphics (parameter is mistakes)
+              
+    Method for exception handling
+      check to make sure user enters letters (exception handling)
+
+    Method for choosing word (parameter is word_list for given category)
+      choose random word form this list
+      return random word
+
+    Method for counting spaces(parameter is random word)
+      for number of letters in random word
+        add one _
+
+    Method for graphics (mistakes)
+      add parts of body (pig) as mistakes count goes up
   
-Method for choosing word (parameter is word_list for given category)
-  choose random word form this list
-  
- 
+Choice #1 class
  
