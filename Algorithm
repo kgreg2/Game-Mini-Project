@@ -35,6 +35,10 @@ if player chooses 1
       else if letter is not in word
         add 1 to mistakes
 Method for exception handling
-  heck to make sure user enters letters (exception handling)
+  check to make sure user enters letters (exception handling)
+  
+Method for choosing word (parameter is word_list for given category)
+  choose random word form this list
+  
  
  
