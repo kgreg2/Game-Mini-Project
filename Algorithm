@@ -1,6 +1,9 @@
-Super class
+Super class (for choice 1)
 
     Load GUI setup window
+    
+    
+    word list = [words for choice #1]
 
     Main method
         "Welcome to HANGMAN, [1] or [2] Players?"
@@ -14,15 +17,13 @@ Super class
 
             if player inputs choice 1
               create object of choice #1 class
-              word list = [words for choice #1]
               call user input method
-              call chose random word method (parameters is wordlist)
+              call chose random word method (parameter is wordlist)
               call method for counting spaces (parameter is random word)
 
             if player inputs choice 2
               create object of choice #2 class
-              word list = [words for choice #2]
-              call chose random word method (parameters is wordlist)
+              call chose random word method (parameter is wordlist)
               call method for counting spaces (parameter is random word)
               call user input method
 
@@ -50,7 +51,7 @@ Super class
     Method for exception handling
       check to make sure user enters letters (exception handling)
 
-    Method for choosing word (parameter is word_list for given category)
+    Method for choosing word (parameter is word_list)
       choose random word form this list
       return random word
 
@@ -61,5 +62,15 @@ Super class
     Method for graphics (mistakes)
       add parts of body (pig) as mistakes count goes up
   
-Choice #1 class
+Choice #2 class
  
+    word list = [words for choice #2]
+    ******* if doing levels of difficulty, override user input method for less mistakes allowed ******
+    ******* if doing categories, make seperate class for 2 player ******
+   
+Choice #3 class
+ 
+    word list = [words for choice #3]
+    ******* if doing levels of difficulty, override user input method for less mistakes allowed ******
+    
+    
