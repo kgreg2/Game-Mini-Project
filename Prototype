@@ -4,6 +4,33 @@ Please Choose a Category
  + Animals
  +Places
  +Food
+ (STAND INS)
  >>Player clicks one
+ 
+ Catergory: Animal
+ Your word is: 6 letters long
+ 
+ __ __ __ __ __ __
+ Enter your guess: |
+ A B C D E F G H I J K L M
+ N O P Q R S T U V W X Y Z
+ 
+__ __ __ __ __ __
+ Enter your guess: T
+ A B C D E F G H I J K L M
+ N O P Q R S T U V W X Y Z
+ 
+_T_ __ __ _T_ __ __
+    Correct!
+ Enter your guess: |
+ A B C D E F G H I J K L M
+ N O P Q R S -T- U V W X Y Z
+ 
+ _T_ __ __ _T_ __ __
+    Correct!
+ Enter your guess: |
+ A B C D E F G H I J K L M
+ N O P Q R S -T- U V W X Y Z
+ 
  
  
