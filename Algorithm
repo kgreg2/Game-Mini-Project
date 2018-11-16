@@ -3,7 +3,8 @@ Super class (for choice 1)
     Load GUI setup window
     
     
-    word list = [words for choice #1]
+    easy word list = [5 words]
+    mistakes = 0
 
     Main method
         "Welcome to HANGMAN, [1] or [2] Players?"
@@ -12,33 +13,31 @@ Super class (for choice 1)
         if player chooses 1
           print "which Category would you like"
           list 3 categories
-            "animals, places, food" (FILLER)
+            "easy, medium, hard" 
             get user input via mouse click
 
-            if player inputs choice 1
-              create object of choice #1 class
+            if player inputs easy (5 letter words)
+              create object of easy class
               call user input method
-              call chose random word method (parameter is wordlist)
-              call method for counting spaces (parameter is random word)
+              call chose random word method (parameter is easy wordlist)
+              create 5 spaces
 
-            if player inputs choice 2
-              create object of choice #2 class
-              call chose random word method (parameter is wordlist)
-              call method for counting spaces (parameter is random word)
+            if player inputs medium (7 letter words)
+              create object of medium class
+              call chose random word method (parameter is medium wordlist)  
+              create 7 spaces
               call user input method
 
-            if player inputs choice 3
-              create object of choice #3 class
-              Load file with word list
-              select random word
-              count letters
-              create spaces for letter input depending on how much counted letters
+            if player inputs hard (9 letter words)
+              create object of hard class
+              call chose random word method (parameter is hard wordlist) 
+              create spaces for 9 letters
 
          else if player chooses 2
             create object of 2 player class
 
     Method for getting user input
-       print "please fill in the spaces with the word you think it is."
+       print "please enter a letter"
        for up to 6 mistakes (exit once condition is met)
           allow user to enter a letter
           call exception handling method
@@ -55,22 +54,18 @@ Super class (for choice 1)
       choose random word form this list
       return random word
 
-    Method for counting spaces(parameter is random word)
-      for number of letters in random word
-        add one _
-
     Method for graphics (mistakes)
-      add parts of body (pig) as mistakes count goes up
+      remove parts of body as mistakes count goes up
   
-Choice #2 class
+Medium class
  
-    word list = [words for choice #2]
+    medium word list = [5 words]
     ******* if doing levels of difficulty, override user input method for less mistakes allowed ******
     ******* if doing categories, make seperate class for 2 player ******
    
-Choice #3 class
+Hard class
  
-    word list = [words for choice #3]
+    hard word list = [5 words]
     ******* if doing levels of difficulty, override user input method for less mistakes allowed ******
     
     
