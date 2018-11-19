@@ -6,35 +6,35 @@ Create SUPER CLASS
     mistakes = 0
     
     Main method
-        print "Welcome to HANGMAN, [1] or [2] Players?"
+        print "Welcome to HANGMAN, [1] or [2] Players?" (each on a different button)
         player_num = player input via mouse click on 1 or 2
 
         if player_num == 1
           print "which Category would you like"
-          list 3 categories
-            "easy, medium, hard" 
-            get user input via mouse click
+          print "easy, medium, hard" (each on a different button)
+          category = user input via mouse click
 
-            if player inputs easy (5 letter words)
-              create object of easy class
-              call user input method
+            if category == easy (5 letter words)
+              create object of super class
               call chose random word method (parameter is easy wordlist)
-              create 5 spaces
+              create 5 spaces on screen
+              call user input method
 
-            if player inputs medium (7 letter words)
-              create object of medium class
+            if category == medium (7 letter words)
+              create object of super class
               call chose random word method (parameter is medium wordlist)  
               create 7 spaces
               call user input method
 
-            if player inputs hard (9 letter words)
-              create object of hard class
+            if category == hard (9 letter words)
+              create object of super class
               call chose random word method (parameter is hard wordlist) 
               create spaces for 9 letters
+              call user input method
 
-         else if player chooses 2
+         else if player_num == 2
             create object of 2 player class
             call getting word method
-            call method fro spaces (parameter is word)
-            print "hand over the coomputer to player 2"
+            call method for spaces (parameter is word)
+            print "hand over the computer to player 2"
             call method for getting input
