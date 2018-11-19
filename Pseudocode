@@ -21,13 +21,13 @@ Create SUPER CLASS
                   create 5 spaces on screen
                   call user input method
 
-                if category == medium (7 letter words)
+                else if category == medium (7 letter words)
                   create object of super class
                   call chose random word method (parameter is medium wordlist)  
                   create 7 spaces
                   call user input method
 
-                if category == hard (9 letter words)
+                else if category == hard (9 letter words)
                   create object of super class
                   call chose random word method (parameter is hard wordlist) 
                   create spaces for 9 letters
@@ -52,7 +52,7 @@ Create SUPER CLASS
             call play_again method
             
             
- Method for getting user input
+    Method for getting user input
  
        print "please enter a letter"
        for up to 6 mistakes
@@ -60,7 +60,7 @@ Create SUPER CLASS
           call exception handling method (from 1 player class)
           
           if letter is in word
-            add letter to correct
+            add letter to correct space
             call method for graphics (parameter is correct)
             
           else if
