@@ -39,3 +39,13 @@ Create SUPER CLASS
                 call method for spaces (parameter is word)
                 print "hand over the computer to player 2"
                 call method for getting input
+                
+    Method for play again()
+        print "would you like to play again?(Y/N)"
+        Call exception checking method
+        playagain = input 
+        if playagain == Y
+            play_again = True
+        elseif playagain == N
+            break
+        
