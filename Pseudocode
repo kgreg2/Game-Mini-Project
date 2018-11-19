@@ -47,6 +47,54 @@ Create SUPER CLASS
         if playagain == Y
             play_again = True
         elseif playagain == N
-            play_again = False
+            play_again = false
+            print "game over"
+            call play_again method
             
+            
+ Method for getting user input
+ 
+       print "please enter a letter"
+       for up to 6 mistakes
+          get user input
+          call exception handling method (from 1 player class)
+          
+          if letter is in word
+            add letter to correct
+            call method for graphics (parameter is correct)
+            
+          else if
+            add 1 to mistakes
+            call method for graphics (parameter is mistakes)
+            if mistakes = 6
+            print "Game over, try again Y/N"
+            call play again method
+              
+    Method for exception handling
+      check to make sure user enters letters (exception handling)
+
+    Method for choosing word (parameter is word_list)
+      choose random word form this list
+      return random word
+
+    Method for graphics (mistakes)
+      remove parts of body as mistakes count goes up
+  
+2 player class
+
+    create word variable
+    
+    Method for getting word()
+        print "enter a word for the other player to guess"
+        call exception handling method (form 2 player class)
+        word = user input
+        return word
+    
+    Method for counting spaces(word)
+        find string length
+        for i in number of characters
+            add one space
+            
+    Method for exception handling
+        check to make sure there are no spaces, only letters
         
