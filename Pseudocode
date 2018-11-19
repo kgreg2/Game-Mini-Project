@@ -1,1 +1,40 @@
+Create SUPER CLASS
 
+    easy word list = [5 different 5 letter words]
+    medium word list = [5 different 7 letter words]
+    hard word list = [5 different 9 letter words]
+    mistakes = 0
+    
+    Main method
+        print "Welcome to HANGMAN, [1] or [2] Players?"
+        player_num = player input via mouse click on 1 or 2
+
+        if player_num == 1
+          print "which Category would you like"
+          list 3 categories
+            "easy, medium, hard" 
+            get user input via mouse click
+
+            if player inputs easy (5 letter words)
+              create object of easy class
+              call user input method
+              call chose random word method (parameter is easy wordlist)
+              create 5 spaces
+
+            if player inputs medium (7 letter words)
+              create object of medium class
+              call chose random word method (parameter is medium wordlist)  
+              create 7 spaces
+              call user input method
+
+            if player inputs hard (9 letter words)
+              create object of hard class
+              call chose random word method (parameter is hard wordlist) 
+              create spaces for 9 letters
+
+         else if player chooses 2
+            create object of 2 player class
+            call getting word method
+            call method fro spaces (parameter is word)
+            print "hand over the coomputer to player 2"
+            call method for getting input
