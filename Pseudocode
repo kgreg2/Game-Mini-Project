@@ -47,5 +47,6 @@ Create SUPER CLASS
         if playagain == Y
             play_again = True
         elseif playagain == N
-            break
+            play_again = False
+            
         
