@@ -42,7 +42,7 @@ Super class (for choice 1)
             print "hand over the coomputer to player 2"
             call method for getting input
 
-    Method for getting user input
+    Method for getting user input **
        print "please enter a letter"
        for up to 6 mistakes (exit once condition is met)
           allow user to enter a letter
@@ -56,7 +56,7 @@ Super class (for choice 1)
     Method for exception handling
       check to make sure user enters letters (exception handling)
 
-    Method for choosing word (parameter is word_list)
+    Method for choosing word (parameter is word_list) 
       choose random word form this list
       return random word
 
@@ -67,17 +67,17 @@ Super class (for choice 1)
 
     create word variable
     
-    Method for getting word()
+    Method for getting word() **
         print "enter a word for the other player to guess"
         call exception handling method (form 2 player class)
         word = user input
         return word
     
-    Method for counting spaces(word)
+    Method for counting spaces(word) **
         find length of word 
         for i in number of characters
             add one _
             
-    Method for exception handling
+    Method for exception handling **
         check to make sure there are no spaces and only letters
         
