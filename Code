@@ -61,3 +61,36 @@ public class CGTemplate extends JFrame {
       });
    }
 }
+
+// GETVALUE, GETWORD, COUNTWORD
+     public static int getvalue(String userinput){
+        System.out.print ("please enter a word");
+        Scanner input = new Scanner(System.in);
+        int value;
+        while (true){
+            try{
+                value=input.nextInt();
+                break;
+            }
+            catch (InputMismatchException err){
+                input.next();
+                System.out.print("Incorrect character");
+            }
+        }
+        return value;
+    } 
+}
+   // COUNT LETTERS
+   public void countletters (){
+   String word = null;
+   String str = word;
+int length = str.length( );
+   public static void main(String[] args) {
+      SwingUtilities.invokeLater(new Runnable() {
+         @Override
+         public void run() {
+            new CGTemplate();
+         }
+      });
+   }
+}
