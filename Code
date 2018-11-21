@@ -94,3 +94,78 @@ int length = str.length( );
       });
    }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hangman;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ocdsb
+ */
+public class Hangman {
+
+    /**
+     * @param args the command line arguments
+     */
+    String [] easy_words = {"fault", "stars", "books"};
+    String [] medium_words = {"jacuzzi", "jukebox", "grizzly"};
+    String [] hard_words = {"brilliant", "blackjack", "zigzagged"};
+    int mistakes = 0;
+    
+    public static void main(String[] args) {
+        
+        System.out.println("Welcome to HANGMAN, [1] or [2] Players?");
+        Scanner player_input = new Scanner(System.in);
+        int player_num = player_input.nextInt();
+        
+        if (player_num == 1){
+            Scanner category_input = new Scanner(System.in);
+            System.out.println("Choose a difficulty level(easy/medium/hard)");
+            String category = category_input.nextLine();
+            if("easy".equalsIgnoreCase(category)){
+                Hangman easy = new Hangman();
+                //easy.getword(easy_words);
+                for(int i=1 ; i<=5 ; i++){
+                    System.out.print("__ ");
+                }
+                //easy.getvalue()
+            }
+            else if("medium".equalsIgnoreCase(category)){
+                Hangman medium = new Hangman();
+                //medium.getword(medium_words);
+                for(int i=1 ; i<=7 ; i++){
+                    System.out.print("__ ");
+                }
+                //medium.getvalue()
+                }
+            else if("hard".equalsIgnoreCase(category)){
+                Hangman medium = new Hangman();
+                //hard.getword(hard_words);
+                for(int i=1 ; i<=9 ; i++){
+                    System.out.print("__ ");
+                }
+                //hard.getvalue()
+                }
+            else{
+                //call exception method
+            }
+ 
+        }
+        else if(player_num == 2){
+            Player2 player_2 = new Player2();
+            //call get word method from player 2 class
+            //call spaces for player 2 method (parameter word)
+            System.out.println("Hand over computer to player 2");
+            //call method for getting input for OG class
+            player_2.testMethod();
+        }
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////
