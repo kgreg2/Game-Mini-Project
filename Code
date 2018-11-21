@@ -114,11 +114,16 @@ public class Hangman {
     /**
      * @param args the command line arguments
      */
-    String [] easy_words = {"fault", "stars", "books"};
-    String [] medium_words = {"jacuzzi", "jukebox", "grizzly"};
-    String [] hard_words = {"brilliant", "blackjack", "zigzagged"};
+    static String [] easy_words = {"fault", "stars", "books"};
+    static String [] medium_words = {"jacuzzi", "jukebox", "grizzly"};
+    static String [] hard_words = {"brilliant", "blackjack", "zigzagged"};
     int mistakes = 0;
     
+    public String randomWord(String [] word_list){
+        String word;
+        word = word_list[(int) (Math.random() * word_list.length)];
+        return word;
+    }
     public static void main(String[] args) {
         
         System.out.println("Welcome to HANGMAN, [1] or [2] Players?");
@@ -131,27 +136,27 @@ public class Hangman {
             String category = category_input.nextLine();
             if("easy".equalsIgnoreCase(category)){
                 Hangman easy = new Hangman();
-                //easy.getword(easy_words);
+                System.out.println((easy.randomWord(easy_words));
                 for(int i=1 ; i<=5 ; i++){
                     System.out.print("__ ");
                 }
-                //easy.getvalue()
+                //easy.userInput()
             }
             else if("medium".equalsIgnoreCase(category)){
                 Hangman medium = new Hangman();
-                //medium.getword(medium_words);
+                System.out.println(medium.randomWord(medium_words));
                 for(int i=1 ; i<=7 ; i++){
                     System.out.print("__ ");
                 }
-                //medium.getvalue()
+                //medium.userInput()
                 }
             else if("hard".equalsIgnoreCase(category)){
-                Hangman medium = new Hangman();
-                //hard.getword(hard_words);
+                Hangman hard = new Hangman();
+                System.out.println(hard.randomWord(hard_words));
                 for(int i=1 ; i<=9 ; i++){
                     System.out.print("__ ");
                 }
-                //hard.getvalue()
+                //hard.userInput()
                 }
             else{
                 //call exception method
@@ -163,7 +168,7 @@ public class Hangman {
             //call get word method from player 2 class
             //call spaces for player 2 method (parameter word)
             System.out.println("Hand over computer to player 2");
-            //call method for getting input for OG class
+            //call method for getting input from super class
             player_2.testMethod();
         }
     }
