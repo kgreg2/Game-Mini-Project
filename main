@@ -8,6 +8,7 @@ package hangman;
 import java.util.Scanner;
 import java.awt.*;      
 import java.awt.event.*;
+import java.util.InputMismatchException;
 import javax.swing.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -102,8 +103,17 @@ public class Hangman {
     public char guess_value(){
         Scanner letter_input = new Scanner(System.in);
         System.out.println("Guess a letter");
-        letter = letter_input.next().charAt(0);
-        return letter;     
+        while (true){
+            try{
+                letter = letter_input.next().charAt(0);
+                break;
+            }
+            catch (InputMismatchException err){
+                letter_input.next();
+                System.out.print("Incorrect character");
+            }
+        }
+        return letter;   
     }
    
     public int letter_position(char guess){
@@ -141,8 +151,15 @@ public class Hangman {
                     
                     while (mistakes < 6 /*&& easy_spaces.contains("_")*/) {
                         easy.guess_value();
-                        easy.letter_position(letter);
-                        easy.replace_letters(position, letter);
+                        if(new String(easy_spaces).indexOf(letter) == -1){
+                            easy.letter_position(letter);
+                            easy.replace_letters(position, letter);
+                        }
+                        else{
+                            mistakes += 1;
+                            easy.paintComponent(mistakes);
+                        }
+                        
                     }
             }
 
@@ -179,7 +196,7 @@ public class Hangman {
 
 
 
-        public void paintComponent(Graphics g) {
+        public void paintComponent(Graphics g,int mistakes) {
         switch (mistakes) {
             case 1:
                 g.setColor(Color.BLACK);
@@ -200,9 +217,6 @@ public class Hangman {
             case 5:
                 g.setColor(Color.BLACK);
                 g.drawLine(300, 350, 300, 150); //body
-                break;
-            case 6:
-                ;
                 break;
             default:
                 break;
