@@ -112,10 +112,9 @@ public class Hangman {
     }
 
    
-    public void replace_letters(){
+    public void replace_letters(int position, char letter){
         easy_spaces[position] = letter;
-        word = String.valueOf(easy_spaces);
-        System.out.println(word);
+        System.out.println(easy_spaces);
     }
 
    
@@ -143,7 +142,7 @@ public class Hangman {
                     while (mistakes < 6 /*&& easy_spaces.contains("_")*/) {
                         easy.guess_value();
                         easy.letter_position(letter);
-                        easy.replace_letters();
+                        easy.replace_letters(position, letter);
                     }
             }
 
@@ -180,33 +179,35 @@ public class Hangman {
 
 
 
-                    public void paintComponent(Graphics g) {
-                        if (mistakes == 1) {
-                         g.setColor(Color.BLACK);
-                         g.drawLine(300, 350, 200, 400); //FOOT L
-                        }
-                        
-                        else if (mistakes == 2) {
-                         g.setColor(Color.BLACK);
-                         g.drawLine(300, 350, 400, 400); //FOOT R 
-                        }
-                         
-                        else if (mistakes == 3) {
-                         g.setColor(Color.BLACK);
-                         g.drawLine(300, 260, 400, 150); //arm R
-                         }
-                         
-                        else if (mistakes == 4) {
-                         g.setColor(Color.BLACK);
-                         g.drawLine(300, 260, 200, 150); //arm L
-                         }
-                         
-                        else if (mistakes == 5) {
-                         g.setColor(Color.BLACK);
-                         g.drawLine(300, 350, 300, 150); //body
-                         }
-                         
-                        else if (mistakes == 6); {
+        public void paintComponent(Graphics g) {
+        switch (mistakes) {
+            case 1:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 200, 400); //FOOT L
+                break;
+            case 2:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 400, 400); //FOOT R 
+                break;
+            case 3:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 260, 400, 150); //arm R
+                break;
+            case 4:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 260, 200, 150); //arm L
+                break;
+            case 5:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 300, 150); //body
+                break;
+            case 6:
+                ;
+                break;
+            default:
+                break;
+        }
+{
                          g.setColor(Color.BLACK);
                          g.fillOval(250, 100, 100, 100);
                         System.out.println("You lose!");     
