@@ -1,0 +1,59 @@
+class CGTemplate extends JFrame {
+   // Define constants
+   public static final int CANVAS_WIDTH  = 640;
+   public static final int CANVAS_HEIGHT = 480;
+ 
+   private DrawCanvas canvas;
+ 
+   // Canvas
+   public CGTemplate() {
+      canvas = new DrawCanvas();
+      canvas.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
+ 
+      Container cp = getContentPane();
+      cp.add(canvas);
+
+ 
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
+      pack();
+      setTitle("......");
+      setVisible(true);
+   }
+ 
+  
+   private class DrawCanvas extends JPanel {
+
+      @Override
+      public void paintComponent(Graphics g) {
+         super.paintComponent(g);
+         setBackground(Color.BLACK); //background
+ 
+  
+         // Drawing body
+         g.setColor(Color.YELLOW);
+         g.drawLine(300, 350, 300, 150); //body
+         g.fillOval(250, 100, 100, 100); //head
+         g.drawLine(300, 260, 200, 150); //arm L
+         g.drawLine(300, 260, 400, 150); //arm R
+         g.drawLine(300, 350, 400, 400); //FOOT R
+         g.drawLine(300, 350, 200, 400); //FOOT L
+         // Printing title
+         g.setColor(Color.WHITE);
+         g.setFont(new Font("Monospaced", Font.PLAIN, 50));
+         g.drawString("Hangman.", 10, 40);
+      }
+   }
+
+   // The entry main method
+   public static void main(String[] args) {
+      SwingUtilities.invokeLater(new Runnable() {
+         @Override
+         public void run() {
+            new CGTemplate();
+         }
+      });
+   }
+}
+//count spaces in a word
+
+                     
