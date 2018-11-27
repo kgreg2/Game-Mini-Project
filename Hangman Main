@@ -28,7 +28,7 @@ public class Hangman {
      * @param args the command line arguments
      */
     static String [] easy_words = {"fault", "juicy", "klutz"};
-    static String [] medium_words = {"Jackets", "jukebox", "Musical"};
+    static String [] medium_words = {"Jackpot", "jukebox", "Musical"};
     static String [] hard_words = {"abolished", "lakefront", "taborines"};
     static int mistakes = 0, wordLen = 0;
     static char letter;
