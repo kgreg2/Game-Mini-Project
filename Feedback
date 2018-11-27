@@ -3,4 +3,4 @@
 - print a  congrats message with the amount of tries they took, and maybe keep track of time as well. Also give the user a score which depends on how many guesses they took, how many were incorrect, and the diffculty of the word. 
 - make the entire game a function so that you can recall it at the end of the game if the user wants to play again.
 - add spaces between the underscores for clarity.
-- at the end of the game, ouput all the letter which they guessed that were incorrect.
+- at the end of the game, ouput all the letter which they guessed that were incorrect. (add to array)
