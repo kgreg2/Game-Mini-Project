@@ -1,1 +1,31 @@
+Classes
+    Hangman/Player 1  (super class)
+        States (attributes)
+            Easy word list
+            Medium word list
+            Hard word list
+            Easy spaces
+            Med spaces
+            Hard spaces
+            Mistakes count
+            Letter
+            Position 
+            word
+        Behaviors (methods)
+            → Get random word
+            → Allow user to guess letter
+            → Find letter position
+            →replace letter
+            → Play again
+            → graphics
+            → exception handling
+    
+    Player 2 (extends Hangman)
+        States (attributes)
+            Word (different than Hangman)
+        Behaviors (methods)
+            → Get word from other user (override?)
+            → count spaces in word
+            → exception handling (make sure no spaces)(override?)
+
 
