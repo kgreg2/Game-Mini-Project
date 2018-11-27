@@ -13,3 +13,5 @@ What if user enters a player number other than 1 or 2? Similar to choosing categ
   
 When you enter more than 1 letter as a guess
   - program only takes first letter
+
+When you enter a letter that repeats in the word it only replaces the first occurence
