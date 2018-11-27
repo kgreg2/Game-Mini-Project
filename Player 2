@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hangman;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Katrina
+ */
+class Player2 {
+
+    static char letter; 
+    String twopword;
+    
+    
+    //GET WORD
+    public void getWord(){ 
+        try {
+        Scanner input = new Scanner(System.in);
+       
+        System.out.print ("Enter a word for the player to guess between 5 - 10:");
+        twopword = input.next();
+        }
+        catch (RuntimeException twopword){
+            System.out.println ("you cannot have spaces and or be blank");
+        }
+          
+    }
+//COUNT
+   public void countletters (){
+   String str = twopword;
+   int length = str.length( );
+   }
+  
+
+      public char guess_value(){
+        Scanner letter_input = new Scanner(System.in);
+        System.out.println("Guess a letter");
+        letter = letter_input.next().charAt(0);
+        return letter; }}
+
+
+
+
