@@ -1,0 +1,205 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hangman;
+
+import java.util.Scanner;
+import java.awt.*;      
+import java.awt.event.*;
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import javax.swing.*;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+
+
+//count spaces in a word
+
+                     
+/**
+ *
+ * @author ocdsb
+ */
+public class Hangman {
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    static String [] easy_words = {"fault", "juicy", "klutz"};
+    static String [] medium_words = {"Jackets", "jukebox", "Musical"};
+    static String [] hard_words = {"abolished", "lakefront", "taborines"};
+    static int mistakes = 0, wordLen = 0;
+    static char letter;
+    static String input_new,twopword;
+    static int position;
+    static String word;
+    static char [] easy_spaces = {'_','_','_','_','_'};
+    static char [] medium_spaces = {'_','_','_','_','_','_','_'};
+    static char [] hard_spaces = {'_','_','_','_','_','_','_','_','_'};
+
+    
+    
+    
+   
+    public String randomWord(String [] word_list){
+        word = word_list[(int) (Math.random() * word_list.length)];
+        return word;
+    }
+   
+    public char guess_value(){
+        Scanner letter_input = new Scanner(System.in);
+        System.out.println("Guess a letter");
+        while (true){
+            try{
+                letter = letter_input.next().charAt(0);
+                break;
+            }
+            catch (InputMismatchException err){
+                letter_input.next();
+                System.out.print("Incorrect character");
+            }
+        }
+        return letter;   
+    }
+    
+   
+    public int letter_position(char guess){
+        position = word.indexOf(guess);
+        return position;
+    }
+
+   
+    public void replace_letters(int position, char letter, char [] spaces){
+        spaces[position] = letter;
+        System.out.println(spaces);
+    }
+    
+        //GET WORD
+    public void getWord(){ 
+        try {
+        Scanner input = new Scanner(System.in);
+       
+        System.out.print ("Enter a word for the player to guess between 5 - 10:");
+        twopword = input.next();
+        }
+        catch (RuntimeException twopword){
+            System.out.println ("you cannot have spaces and or be blank");
+        }
+          
+    }
+//COUNT
+   public void countletters (){
+   String str = twopword;
+   int Length = str.length( );
+   wordLen = Length;
+   }
+
+    public static void play_game(char [] spaces, Hangman lvl){
+        while (mistakes < 6 && ((new String(spaces).indexOf("_")) > -1)) {
+            lvl.guess_value();
+            char lower_case = Character.toLowerCase(letter);
+            if(word.indexOf(lower_case) > -1){
+                lvl.letter_position(lower_case);
+                lvl.replace_letters(position, lower_case, spaces);
+            }
+            else{
+                mistakes += 1;
+                System.out.println("letter is not in word");
+            }
+            //easy.paintComponent(mistakes);
+        }
+        System.out.println("GAME OVER");
+        System.out.println("The word was " + word);
+    }
+   
+    @SuppressWarnings("empty-statement")
+    public static void main(String[] args) {
+        Scanner player_input = new Scanner(System.in);
+        System.out.println("Welcome to HANGMAN, [1] or [2] Players?");
+        int player_num = player_input.nextInt();
+        int mistakes = 0;
+       
+        switch (player_num) {
+            case 1:
+                Scanner category_input = new Scanner(System.in);
+                System.out.println("Choose a difficulty level(easy(5 letter words)/ medium(7 letter words)/ hard(9 letter words)");
+                String category = category_input.nextLine();
+                if("easy".equalsIgnoreCase(category)){
+                    Hangman easy = new Hangman();
+                    System.out.println(easy.randomWord(easy_words));
+                    System.out.println(easy_spaces);
+                    play_game(easy_spaces, easy);
+                    break;
+                }
+                
+                else if("medium".equalsIgnoreCase(category)){
+                    Hangman medium = new Hangman();
+                    System.out.println(medium.randomWord(medium_words));
+                    System.out.println(medium_spaces);
+                    play_game(medium_spaces, medium);
+                    break;
+                    
+                }
+                
+                else if("hard".equalsIgnoreCase(category)){
+                    Hangman hard = new Hangman();
+                    System.out.println(hard.randomWord(hard_words));
+                    System.out.println(hard_spaces);
+                    play_game(hard_spaces, hard);
+                    break;
+                }   
+                
+                else{
+                    System.out.println("You must choose one of the levels");
+                }
+                
+            case 2:
+                Player2 player_2 = new Player2();
+                player_2.getWord();
+                    System.out.println("Hand over computer to player 2");
+                
+                break;
+            default:
+                System.out.println("You can only choose player 1 or 2");
+                break;
+        }
+    
+}
+    
+
+
+
+        public void paintComponent(Graphics g,int mistakes) {
+        switch (mistakes) {
+            case 1:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 200, 400); //FOOT L
+                break;
+            case 2:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 400, 400); //FOOT R 
+                break;
+            case 3:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 260, 400, 150); //arm R
+                break;
+            case 4:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 260, 200, 150); //arm L
+                break;
+            case 5:
+                g.setColor(Color.BLACK);
+                g.drawLine(300, 350, 300, 150); //body
+                break;
+            default:
+                break;
+        }
+{
+                         g.setColor(Color.BLACK);
+                         g.fillOval(250, 100, 100, 100);
+                        System.out.println("You lose!");     
+                    }
+                    }
+}
