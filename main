@@ -87,6 +87,7 @@ public class Hangman {
     static String [] medium_words = {"kickbox", "jukebox", "Musical"};
     static String [] hard_words = {"abolished", "lakefront", "taborines"};
     static int mistakes = 0;
+    static int tries = 0;
     static char letter;
     static String input_new;
     static int position;
@@ -138,14 +139,17 @@ public class Hangman {
             if(word.indexOf(lower_case) > -1){
                 lvl.letter_position(lower_case);
                 lvl.replace_letters(position, lower_case, spaces);
+                tries += 1;
             }
             else{
                 mistakes += 1;
-                System.out.println("letter is not in word");
+                tries += 1;
+                System.out.println("letter '" + letter + "' is not in word");
+                System.out.println("You have made " + mistakes + " mistake(s)" );
             }
             //easy.paintComponent(mistakes);
         }
-        System.out.println("GAME OVER");
+        System.out.println("GAME OVER! It took you " + tries + " tries to guess the word");
         System.out.println("The word was " + word);
     }
    
@@ -159,36 +163,40 @@ public class Hangman {
         switch (player_num) {
             case 1:
                 Scanner category_input = new Scanner(System.in);
+                System.out.println("You have a max of 6 mistakes to guess the word");
                 System.out.println("Choose a difficulty level(easy(5 letter words)/ medium(7 letter words)/ hard(9 letter words)");
                 String category = category_input.nextLine();
                 if("easy".equalsIgnoreCase(category)){
                     Hangman easy = new Hangman();
-                    System.out.println(easy.randomWord(easy_words));
+                    easy.randomWord(easy_words);
+                    System.out.print("The word is: ");
                     System.out.println(easy_spaces);
                     play_game(easy_spaces, easy);
-                    break;
+                   
                 }
                 
                 else if("medium".equalsIgnoreCase(category)){
                     Hangman medium = new Hangman();
-                    System.out.println(medium.randomWord(medium_words));
+                    medium.randomWord(medium_words);
+                    System.out.print("The word is: ");
                     System.out.println(medium_spaces);
                     play_game(medium_spaces, medium);
-                    break;
-                    
+                     
                 }
                 
                 else if("hard".equalsIgnoreCase(category)){
                     Hangman hard = new Hangman();
-                    System.out.println(hard.randomWord(hard_words));
+                    hard.randomWord(hard_words);
+                    System.out.print("The word is: ");
                     System.out.println(hard_spaces);
                     play_game(hard_spaces, hard);
-                    break;
+                    
                 }   
                 
                 else{
                     System.out.println("You must choose one of the levels");
                 }
+                break;
             case 2:
                 Player2 player_2 = new Player2();
                 player_2.getWord();
@@ -198,7 +206,7 @@ public class Hangman {
                 break;
             default:
                 System.out.println("You can only choose player 1 or 2");
-                break;
+                break;                
         }
     
 }
