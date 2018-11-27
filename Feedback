@@ -1,1 +1,4 @@
-
+- if the letter guessed was incorrect, then restate the inputed letter when outputting the message so that they can avoid repeating the same letter
+- if they guess a letter which is not in the word, tell the user how many incorrect guesses they have left until the game is over.
+- print a  congrats message with the amount of tries they took, and maybe keep track of time as well. Also give the user a score which depends on how many guesses they took, how many were incorrect, and the diffculty of the word. 
+- make the entire game a function so that you can recall it at the end of the game if the user wants to play again.
