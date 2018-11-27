@@ -8,5 +8,8 @@ After user is done guessing the word, it keeps allowing them to enter letters as
 What if user enters category name with dif caps?
   - use ignore case and just focus on word
  
-What if user enters a player number other than 1 or 2?
-  - 
+What if user enters a player number other than 1 or 2? Similar to choosing category.
+  - was not able to fix because if player_num was in try-catch, it was not accesible outside
+  
+When you enter more than 1 letter as a guess
+  - program only takes first letter
