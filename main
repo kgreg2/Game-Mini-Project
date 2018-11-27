@@ -8,6 +8,7 @@ package hangman;
 import java.util.Scanner;
 import java.awt.*;      
 import java.awt.event.*;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import javax.swing.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -85,12 +86,14 @@ public class Hangman {
     static String [] easy_words = {"fault", "juicy", "klutz"};
     static String [] medium_words = {"kickbox", "jukebox", "Musical"};
     static String [] hard_words = {"abolished", "lakefront", "taborines"};
-    int mistakes = 0;
+    static int mistakes = 0;
     static char letter;
+    static String input_new;
     static int position;
     static String word;
-    static
-    char [] easy_spaces = {'_','_','_','_','_'};
+    static char [] easy_spaces = {'_','_','_','_','_'};
+    static char [] medium_spaces = {'_','_','_','_','_','_','_'};
+    static char [] hard_spaces = {'_','_','_','_','_','_','_','_','_'};
     
     
     
@@ -115,6 +118,7 @@ public class Hangman {
         }
         return letter;   
     }
+    
    
     public int letter_position(char guess){
         position = word.indexOf(guess);
@@ -122,75 +126,81 @@ public class Hangman {
     }
 
    
-    public void replace_letters(int position, char letter){
-        easy_spaces[position] = letter;
-        System.out.println(easy_spaces);
+    public void replace_letters(int position, char letter, char [] spaces){
+        spaces[position] = letter;
+        System.out.println(spaces);
     }
 
+    public static void play_game(char [] spaces, Hangman lvl){
+        while (mistakes < 6 && ((new String(spaces).indexOf("_")) > -1)) {
+            lvl.guess_value();
+            char lower_case = Character.toLowerCase(letter);
+            if(word.indexOf(lower_case) > -1){
+                lvl.letter_position(lower_case);
+                lvl.replace_letters(position, lower_case, spaces);
+            }
+            else{
+                mistakes += 1;
+                System.out.println("letter is not in word");
+            }
+            //easy.paintComponent(mistakes);
+        }
+        System.out.println("GAME OVER");
+        System.out.println("The word was " + word);
+    }
    
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-       
-        System.out.println("Welcome to HANGMAN, [1] or [2] Players?");
         Scanner player_input = new Scanner(System.in);
+        System.out.println("Welcome to HANGMAN, [1] or [2] Players?");
         int player_num = player_input.nextInt();
+        int mistakes = 0;
        
-        if (player_num == 1){
-            int mistakes = 0;
-            Scanner category_input = new Scanner(System.in);
-            System.out.println("Choose a difficulty level(easy/medium/hard)");
-            String category = category_input.nextLine();
-           
-           
-            if("easy".equalsIgnoreCase(category)){
-             
+        switch (player_num) {
+            case 1:
+                Scanner category_input = new Scanner(System.in);
+                System.out.println("Choose a difficulty level(easy(5 letter words)/ medium(7 letter words)/ hard(9 letter words)");
+                String category = category_input.nextLine();
+                if("easy".equalsIgnoreCase(category)){
                     Hangman easy = new Hangman();
                     System.out.println(easy.randomWord(easy_words));
-
                     System.out.println(easy_spaces);
+                    play_game(easy_spaces, easy);
+                    break;
+                }
+                
+                else if("medium".equalsIgnoreCase(category)){
+                    Hangman medium = new Hangman();
+                    System.out.println(medium.randomWord(medium_words));
+                    System.out.println(medium_spaces);
+                    play_game(medium_spaces, medium);
+                    break;
                     
-                    while (mistakes < 6 /*&& easy_spaces.contains("_")*/) {
-                        easy.guess_value();
-                        if(new String(easy_spaces).indexOf(letter) == -1){
-                            easy.letter_position(letter);
-                            easy.replace_letters(position, letter);
-                        }
-                        else{
-                            mistakes += 1;
-                            easy.paintComponent(mistakes);
-                        }
-                        
-                    }
-            }
-
-            else if("medium".equalsIgnoreCase(category)){
-                while (mistakes < 6);
-                Hangman medium = new Hangman();
-                medium.randomWord(medium_words);
-                for(int i=1 ; i<=7 ; i++){
-                    System.out.print("__ ");
                 }
-                //medium.getvalue()
+                
+                else if("hard".equalsIgnoreCase(category)){
+                    Hangman hard = new Hangman();
+                    System.out.println(hard.randomWord(hard_words));
+                    System.out.println(hard_spaces);
+                    play_game(hard_spaces, hard);
+                    break;
+                }   
+                
+                else{
+                    System.out.println("You must choose one of the levels");
                 }
-            
-            else if("hard".equalsIgnoreCase(category)){
-                while (mistakes < 6);
-                Hangman hard = new Hangman();
-                hard.randomWord(hard_words);
-                for(int i=1 ; i<=9 ; i++){
-                    System.out.print("__ ");
-                }
-            }
-  
-
-    else if(player_num == 2){
-            Player2 player_2 = new Player2();
-            player_2.getWord();
-            //call spaces for player 2 method (parameter word)
-            System.out.println("Hand over computer to player 2");
-            player_2.guess_value();
+            case 2:
+                Player2 player_2 = new Player2();
+                player_2.getWord();
+                //call spaces for player 2 method (parameter word)
+                System.out.println("Hand over computer to player 2");
+                player_2.guess_value();
+                break;
+            default:
+                System.out.println("You can only choose player 1 or 2");
+                break;
         }
-    }
+    
 }
     
 
