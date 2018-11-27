@@ -1,1 +1,12 @@
+What if user enters capital letter as one of guesses for the letter?
+  - counts it as a mistake
+  - convert to letter input to lower case
 
+After user is done guessing the word, it keeps allowing them to enter letters as long as mistake count < 6
+  - allow user to enter input only as long as mistakes < 6 AND there are _ left in the spaces
+  
+What if user enters category name with dif caps?
+  - use ignore case and just focus on word
+ 
+What if user enters a player number other than 1 or 2?
+  - 
